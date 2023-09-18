@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -11,8 +12,8 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SvgPicture.asset("assets/svg/logo_ic.svg"),
-        SvgPicture.asset("assets/svg/ic search.svg"),
+        SvgPicture.asset(AssetsData.logo),
+        SvgPicture.asset(AssetsData.searchIc),
       ],
     );
   }
