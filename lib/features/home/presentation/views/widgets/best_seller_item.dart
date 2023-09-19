@@ -1,11 +1,9 @@
-import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/booking_rate.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:go_router/go_router.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});
@@ -18,8 +16,9 @@ class BestSellerItem extends StatelessWidget {
         height: 125,
         child: GestureDetector(
           onTap: () {
-            Get.to(const BookDetailsView(),
-                transition: Transition.fade, duration: kTransitionDuration);
+            // Get.to(const BookDetailsView(),
+            //     transition: Transition.fade, duration: kTransitionDuration);
+            GoRouter.of(context).push(AppRouter.kDetailsPath);
           },
           child: Row(
             children: [

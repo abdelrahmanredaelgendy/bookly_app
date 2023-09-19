@@ -3,7 +3,6 @@ import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_scroll_featured.dart';
 import 'package:flutter/material.dart';
-
 class HomeViewBody extends StatelessWidget {
   HomeViewBody({super.key});
 
