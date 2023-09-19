@@ -4,7 +4,6 @@ import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_b
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_scroll_featured.dart';
 import 'package:flutter/material.dart';
 
-
 class HomeViewBody extends StatelessWidget {
   HomeViewBody({super.key});
 
@@ -17,37 +16,42 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 48,
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
-            child: CustomAppBar(),
-          ),
-          const SizedBox(
-            height: 46,
-          ),
-          CustomFeaturedBookList(images: images),
-          const SizedBox(
-            height: 50,
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
-            child: Text(
-              "Best Seller",
-              style: Styles.textStyle18,
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 48,
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: CustomAppBar(),
+                ),
+                const SizedBox(
+                  height: 46,
+                ),
+                CustomFeaturedBookList(images: images),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: Text(
+                    "Best Seller",
+                    style: Styles.textStyle18,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
             ),
           ),
-          const SizedBox(height: 20,),
           const BestSellerListView(),
-
         ],
       ),
     );
   }
 }
-
-

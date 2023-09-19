@@ -1,6 +1,7 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/booking_rate.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -12,12 +13,12 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30.0),
+      padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
       child: SizedBox(
         height: 125,
         child: GestureDetector(
-          onTap: (){
-            Get.to(const DetailsView(),
+          onTap: () {
+            Get.to(const BookDetailsView(),
                 transition: Transition.fade, duration: kTransitionDuration);
           },
           child: Row(
@@ -45,12 +46,10 @@ class BestSellerItem extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .5,
-                      child:const  Text(
-                          'Harry Potter and the Goblet of Fire',
+                      child: const Text('Harry Potter and the Goblet of Fire',
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
-                          style: Styles.textStyle20
-                      ),
+                          style: Styles.textStyle20),
                     ),
                     const SizedBox(
                       height: 3,
@@ -80,16 +79,7 @@ class BestSellerItem extends StatelessWidget {
             ],
           ),
         ),
-
       ),
     );
-  }
-}
-class DetailsView extends StatelessWidget {
-  const DetailsView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold();
   }
 }
