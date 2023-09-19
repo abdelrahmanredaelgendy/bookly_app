@@ -1,4 +1,5 @@
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_featured_item.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -6,11 +7,20 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
-        children: [
-          CustomBookDetailsAppBar(),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            const CustomBookDetailsAppBar(),
+            const SizedBox(
+              height: 36,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .33,
+              child: const CustomFeaturedItem(image: "assets/images/book1.png"),
+            ),
+          ],
+        ),
       ),
     );
   }
